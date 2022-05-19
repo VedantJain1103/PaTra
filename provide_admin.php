@@ -29,7 +29,7 @@ else{
 }
 }
 else{ 
-    header('location:logIn.php'); 
+    header('location:index.html'); 
     exit(); 
 } 
 ?>

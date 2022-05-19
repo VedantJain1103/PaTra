@@ -18,7 +18,7 @@ else echo "<center> Cannot Update Information</center>";
 }
 }
 else{ 
-    header('location:logIn.php'); 
+    header('location:index.html'); 
     exit(); 
 } 
 ?>

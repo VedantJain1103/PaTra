@@ -11,7 +11,7 @@ $qry = "SELECT * FROM users WHERE uid='$uid'";
 $result = mysqli_query($link, $qry);
 }
 else{ 
-    header('location:logIn.php'); 
+    header('location:index.html'); 
     exit(); 
 } 
 ?>

@@ -36,7 +36,7 @@ session_destroy();
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav" style="margin-left: 85%;">
                         <li class="nav-item"></li>
-                    </ul><button class="btn btn-primary" type="button" style="background: rgb(235,59,96);border-color: rgba(255,255,255,0);">Log In</button>
+                    </ul><button class="btn btn-primary" type="button"  style="background: rgb(235,59,96);border-color: rgba(255,255,255,0);"><a href="index.html" style="color:white;">Log In</a></button>
                 </div>
             </div>
         </nav>

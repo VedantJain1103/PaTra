@@ -11,7 +11,7 @@ $qry = "SELECT * FROM dummy_data";
 $result = mysqli_query($link, $qry);
 }
 else{ 
-    header('location:logIn.php'); 
+    header('location:index.html'); 
     exit(); 
 } 
 $qry2 = "SELECT stock_name

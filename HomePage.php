@@ -17,7 +17,7 @@ die('Failed to connect to server: ');
  $result2 = mysqli_query($link, $qry2);  
 }
 else{ 
-    header('location:logIn.php'); 
+    header('location:index.html'); 
     exit(); 
 }                
 ?>

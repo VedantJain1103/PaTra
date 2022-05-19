@@ -22,7 +22,7 @@ $count = 1;
 } 
 else{ 
 //Login failed 
-include('logIn.php'); 
+include('index.html'); 
 echo '<center>Incorrect E-mail or Password !!!<center>'; 
 exit(); 
 } 
@@ -37,19 +37,19 @@ header('location:HomePage.php');
 } 
 else{ 
 //Login failed 
-include('logIn.php'); 
+include('index.html'); 
 echo '<center>Incorrect Username or Password !!!<center>'; 
 exit(); 
 } 
 } 
 else{ 
-include('logIn.php'); 
+include('index.html'); 
 echo '<center>Username or Password missing!!</center>'; 
 exit(); 
 } 
 } 
 else{ 
-header("location: logIn.php"); 
+header("location: index.html"); 
 exit(); 
 } 
 ?>
