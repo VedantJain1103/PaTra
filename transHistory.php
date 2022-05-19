@@ -118,13 +118,13 @@ die('Failed to connect to server: ');
                             $stock_c_price = $row3['c_price'];
                             $c_val = $c_val+$stock_c_price*$row4['qty'];
                         }
-                        $p_l=$investedAmt-$c_val;
+                        $p_l=$c_val-$investedAmt;
                         echo '<tr>';
                             echo '<td>'.$investedAmt.'</td>';
                             echo '<td>'.$c_val.'</td>';
-                            if($investedAmt-$c_val>0)echo '<td style="color:green">'.round($p_l,2).'</td>';
+                            if($p_l>0)echo '<td style="color:green">+'.round($p_l,2).'</td>';
                             else echo '<td style="color:red">'.round($p_l,2).'</td>';
-                            if($investedAmt-$c_val>0)echo '<td style="color:green">'.round(($p_l/$investedAmt),2).'%</td>';
+                            if($p_l>0)echo '<td style="color:green">+'.round(($p_l/$investedAmt),2).'%</td>';
                             else echo '<td style="color:red">'.round(($p_l/$investedAmt),2).'%</td>';
                         echo '</tr>';
                         

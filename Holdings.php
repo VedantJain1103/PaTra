@@ -13,7 +13,7 @@ die('Failed to connect to server: ');
  FROM watchlist w,dummy_data d
  WHERE uid='$uid' AND d.stock_name=w.stock_name";
  $result = mysqli_query($link, $qry);                               
- $qry2 = "SELECT h.stock_name,h.qty,h.cost,d.c_price,(qty*c_price) as c_val, (cost-qty*(c_price)) as p_l, ((cost-qty*(c_price))/cost) as net_chg
+ $qry2 = "SELECT h.stock_name,h.qty,h.cost,d.c_price,(qty*c_price) as c_val, (qty*(c_price)-cost) as p_l, ((qty*(c_price)-cost)/cost) as net_chg
  FROM holdings h, dummy_data d
  WHERE h.uid='$uid' and h.stock_name=d.stock_name";
  $result2 = mysqli_query($link,$qry2);
@@ -183,13 +183,13 @@ else{
                             $stock_c_price = $row3['c_price'];
                             $c_val = $c_val+$stock_c_price*$row4['qty'];
                         }
-                        $p_l=$investedAmt-$c_val;
+                        $p_l=$c_val-$investedAmt;
                         echo '<tr>';
                             echo '<td>'.$investedAmt.'</td>';
                             echo '<td>'.$c_val.'</td>';
-                            if($investedAmt-$c_val>0)echo '<td style="color:green">'.round($p_l,2).'</td>';
+                            if($p_l>0)echo '<td style="color:green">+'.round($p_l,2).'</td>';
                             else echo '<td style="color:red">'.round($p_l,2).'</td>';
-                            if($investedAmt-$c_val>0)echo '<td style="color:green">'.round(($p_l/$investedAmt),2).'%</td>';
+                            if($p_l>0)echo '<td style="color:green">+'.round(($p_l/$investedAmt),2).'%</td>';
                             else echo '<td style="color:red">'.round(($p_l/$investedAmt),2).'%</td>';
                         echo '</tr>';
                         

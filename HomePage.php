@@ -117,15 +117,15 @@ else{
                             $stock_c_price = $row3['c_price'];
                             $c_val = $c_val+$stock_c_price*$row4['qty'];
                         }
-                        $p_l=$investedAmt-$c_val;         
+                        $p_l=$c_val-$investedAmt;         
             echo '<div class="col-md-6" style="width:72.5vw;border-left-style:groove;">';
                 echo '<h1 class="text-center" style="width: 350px;height: 50px;margin-top: 12%;margin-left: 31%;">Your Current P&amp;L</h1>';
-                if($investedAmt-$c_val>0) echo '<h1 class="text-center" style="width: 350px;height: 50px;margin-top: 1%;margin-left: 31%;color: var(--bs-teal);">'.round($p_l,2).'</h1>';
+                if($investedAmt-$c_val<0) echo '<h1 class="text-center" style="width: 350px;height: 50px;margin-top: 1%;margin-left: 31%;color: var(--bs-teal);">'.round($p_l,2).'</h1>';
                 else echo '<h1 class="text-center" style="width: 350px;height: 50px;margin-top: 1%;margin-left: 31%;color: red;">'.round($p_l,2).'</h1>';
                 echo '<h1 class="text-center" style="width: 250px;height: 45px;margin-top: 14%;margin-left: 3%;font-size: 30px;">&nbsp; Money Invested</h1>';
                 echo '<h1 class="text-center" style="width: 250px;height: 45px;margin-top: 1%;margin-left: 3%;font-size: 30px;color: var(--bs-teal);">'.$investedAmt.'</h1>';
                 echo '<h1 class="text-center" style="width: 250px;height: 45px;margin-top: -8.8%;margin-left: 60%;font-size: 30px;">% of Return&nbsp;&nbsp;</h1>';
-                if($investedAmt-$c_val>0) echo '<h1 class="text-center" style="width: 250px;height: 45px;margin-top: 1%;margin-left: 60%;font-size: 30px;color: var(--bs-teal);">'.round(($p_l/$investedAmt),2).'%/h1>';
+                if($investedAmt-$c_val<0) echo '<h1 class="text-center" style="width: 250px;height: 45px;margin-top: 1%;margin-left: 60%;font-size: 30px;color: var(--bs-teal);">'.round(($p_l/$investedAmt),2).'%</h1>';
                 else echo '<h1 class="text-center" style="width: 250px;height: 45px;margin-top: 1%;margin-left: 60%;font-size: 30px;color: red;">'.round(($p_l/$investedAmt),2).'%</h1>';
             echo '</div>';
             ?>
